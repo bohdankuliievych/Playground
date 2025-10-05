@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <form class="form">
+        <input
+          class="form__field"
+          type="text"
+          name="title"
+          placeholder="Назва"
+        />
+        <select class="form__select" name="color" id="color-select">
+          <option class="form__select-option" value="зелений">зелений</option>
+          <option class="form__select-option" value="жовтий">жовтий</option>
+          <option class="form__select-option" value="червоний">червоний</option>
+        </select>
+        <button type="submit" class="form__submit">Створити картку</button>
+      </form>
+      <div class="trello">
+        <!-- <div class="trello__column"></div>
+        <div class="trello__column"></div>
+        <div class="trello__column"></div> -->
+      </div>
+      <button type="button" class="trello__button">New Column</button>
+    </main>
+
+    <script src="./js/script.js" type="module"></script>
+  </body>
+</html>
