@@ -76,93 +76,93 @@ transition: 0.3s;
     </div>
 
 .title {
-  min-height: 18px;
-  color: mediumseagreen;
-  text-transform: uppercase;
-  margin-top: 3em;
-  margin-bottom: 3em;
-  font-size: 1em;
-  letter-spacing: 0.3em;
+min-height: 18px;
+color: mediumseagreen;
+text-transform: uppercase;
+margin-top: 3em;
+margin-bottom: 3em;
+font-size: 1em;
+letter-spacing: 0.3em;
 }
 .keyboard {
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 .row {
-  list-style: none;
-  display: flex;
+list-style: none;
+display: flex;
 }
 li {
-  height: 3em;
-  width: 4em;
-  color: rgba(0, 0, 0, 0.7);
-  border-radius: 0.4em;
-  line-height: 3em;
-  letter-spacing: 1px;
-  margin: 0.4em;
-  transition: 0.3s;
-  text-align: center;
-  font-size: 1em;
+height: 3em;
+width: 4em;
+color: rgba(0, 0, 0, 0.7);
+border-radius: 0.4em;
+line-height: 3em;
+letter-spacing: 1px;
+margin: 0.4em;
+transition: 0.3s;
+text-align: center;
+font-size: 1em;
 }
 #tab {
-  width: 5em;
+width: 5em;
 }
 #caps {
-  width: 6em;
+width: 6em;
 }
 #left-shift {
-  width: 8em;
+width: 8em;
 }
 #enter {
-  width: 6em;
+width: 6em;
 }
 #right-shift {
-  width: 8em;
+width: 8em;
 }
 #back {
-  width: 5em;
+width: 5em;
 }
 .pinky {
-  background-color: crimson;
+background-color: crimson;
 }
 .pinky.selected {
-  color: crimson;
+color: crimson;
 }
 .ring {
-  background-color: coral;
+background-color: coral;
 }
 .ring.selected {
-  color: coral;
+color: coral;
 }
 .middle {
-  background-color: darkorange;
+background-color: darkorange;
 }
 .middle.selected {
-  color: darkorange;
+color: darkorange;
 }
 .pointer1st {
-  background-color: gold;
+background-color: gold;
 }
 .pointer1st.selected {
-  color: gold;
+color: gold;
 }
 .pointer2nd {
-  background-color: khaki;
+background-color: khaki;
 }
 .pointer2nd.selected {
-  color: khaki;
+color: khaki;
 }
 .fill-out-key {
-  background-color: slategrey;
+background-color: slategrey;
 }
 .hit {
-  animation: hit 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+animation: hit 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 @keyframes hit {
-  0% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
+0% {
+transform: scale(1.2);
+}
+100% {
+transform: scale(1);
+}
 }

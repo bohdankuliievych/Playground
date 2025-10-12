@@ -1,4 +1,4 @@
-// add(2, sub(4, 3)) // Javascript
+// add(2, sub(4, 3)) // JavaScript
 // (add 2 (sub 4 3)) // Lisp
 
 const compiler = require("./compiler");

@@ -3,9 +3,11 @@ const formTimerField = document.querySelector(".setTimer__field");
 const allTimerValues = document.querySelectorAll(".timer__value");
 
 function startTimer(eventDate) {
+	debugger
   const [days, months, years] = eventDate.split("-");
   const isoDateString = `${years}-${months}-${days}`;
   const dDay = new Date(isoDateString).getTime();
+
   let x = setTimeout(function tick() {
     const now = Date.now();
     const delay = dDay - now;
@@ -50,5 +52,6 @@ timerTriggerButton.addEventListener("click", () => {
     startTimer(eventDate);
   } else {
     alert("enter a valid date string");
+    timerTriggerButton.disabled = false;
   }
 });

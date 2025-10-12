@@ -15,7 +15,7 @@ Return value
 Розмітка HTML та CSS:
 
 <form class="setTimer">
-  <input type="number" class="setTimer__field" name="dateEvent" />
+  <input class="setTimer__field" name="dateEvent" />
   <button class="setTimer__submit" type="submit">запустити відлік</button>
 </form>
 <div class="timer">
