@@ -15,7 +15,6 @@ function addKeyToTitle(key) {
 }
 
 document.addEventListener("keydown", (e) => {
-  // e.preventDefault();
   let reg;
   // letter keys
   if (e.code.match(/^Key[A-Z]$/)) {

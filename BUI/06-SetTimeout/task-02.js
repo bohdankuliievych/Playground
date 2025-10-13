@@ -135,7 +135,7 @@ function renderStorage(storage, parent = rootEl) {
   });
 }
 // ---------------------------------------------
-window.addEventListener("load", (event) => {
+window.addEventListener("load", () => {
   if (!getLocalStorage("basket")) {
     renderStorage(testArray, rootEl);
   } else {
