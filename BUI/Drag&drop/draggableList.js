@@ -14,7 +14,6 @@ export function DraggableItem(content, parentList) {
 }
 
 /**
- *
  * @param {Array} itemsContent
  */
 export function DraggableList(itemsContent) {
