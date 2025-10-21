@@ -144,5 +144,3 @@ exports.img = img;
 exports.fonts = fonts;
 exports.build = build;
 exports.default = dev;
-
-// gulp / gulp build

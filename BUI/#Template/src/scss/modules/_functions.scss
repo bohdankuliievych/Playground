@@ -1,0 +1,19 @@
+@use "sass:math";
+// pixel to percent, don't use units!
+// prc(576, 1800);
+@function prc($pxOne, $pxTwo) {
+  $result: math.div($pxOne, $pxTwo) * 100%;
+  @return $result;
+}
+// pixel to rem, don't use units!
+// rem(44);
+@function rem($px) {
+  $result: math.div($px, 16) + rem;
+  @return $result;
+}
+// pixel to em, don't use units!
+// em(44);
+@function em($px) {
+  $result: math.div($px, 16) + em;
+  @return $result;
+}
