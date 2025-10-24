@@ -13,7 +13,9 @@
   "devDependencies": {
     "@babel/core": "^7.x",
     "@babel/preset-env": "^7.x",
+    "babelify": "^10.0.0",
     "browser-sync": "^2.x",
+    "browserify": "^17.0.1",
     "del": "^5.x",
     "gulp": "^5.0.1",
     "gulp-autoprefixer": "^8.x",
@@ -25,6 +27,8 @@
     "gulp-sass": "^5.x",
     "gulp-sourcemaps": "^3.x",
     "gulp-uglify": "^3.x",
-    "sass": "^1.x"
+    "sass": "^1.x",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }

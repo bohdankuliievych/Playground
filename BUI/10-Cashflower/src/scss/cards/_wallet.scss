@@ -1,0 +1,51 @@
+@use '../modules/common' as c;
+.wallet {
+  padding: 24px;
+  background: c.$black-lighten;
+  border-radius: c.$small-radius;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    color: c.$accent;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #000;
+  }
+
+  &__remove-btn {
+    width: 100%;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: c.$accent;
+    color: c.$white-text;
+    cursor: pointer;
+
+    & svg {
+      width: 18px;
+      height: 18px;
+      padding: 0;
+      background-color: c.$accent;
+    }
+
+    & path {
+      fill: c.$white-text;
+    }
+  }
+}

@@ -10,6 +10,10 @@ const cleanCSS = require("gulp-clean-css");
 const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 const path = require("path");
+const browserify = require("browserify");
+const source = require("vinyl-source-stream");
+const buffer = require("vinyl-buffer");
+const babelify = require("babelify");
 
 const paths = {
   src: "src",
@@ -55,29 +59,43 @@ function stylesProd() {
     .pipe(dest(path.join(paths.dest, "css")));
 }
 
-// scripts: babel -> uglify (keeps one file per source file)
+// scripts: bundle with browserify + babelify
 // scripts (dev): includes sourcemaps
 function scriptsDev() {
-  return src(paths.scripts)
-    .pipe(sourcemaps.init())
-    .pipe(
-      babel({
-        presets: ["@babel/preset-env"],
-      })
-    )
+  const entry = path.join(paths.src, "js", "main.js"); // change if your entry is different
+  return browserify({ entries: entry, debug: true })
+    .transform(babelify, {
+      presets: ["@babel/preset-env"],
+      sourceMaps: true,
+    })
+    .bundle()
+    .on("error", function (err) {
+      console.error(err.toString());
+      this.emit("end");
+    })
+    .pipe(source("bundle.js"))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(uglify())
     .pipe(sourcemaps.write("."))
     .pipe(dest(path.join(paths.dest, "js")))
     .pipe(browserSync.stream());
 }
+
 // scripts (prod): no sourcemaps
 function scriptsProd() {
-  return src(paths.scripts)
-    .pipe(
-      babel({
-        presets: ["@babel/preset-env"],
-      })
-    )
+  const entry = path.join(paths.src, "js", "main.js"); // change if needed
+  return browserify({ entries: entry, debug: false })
+    .transform(babelify, {
+      presets: ["@babel/preset-env"],
+    })
+    .bundle()
+    .on("error", function (err) {
+      console.error(err.toString());
+      this.emit("end");
+    })
+    .pipe(source("bundle.js"))
+    .pipe(buffer())
     .pipe(uglify())
     .pipe(dest(path.join(paths.dest, "js")));
 }
