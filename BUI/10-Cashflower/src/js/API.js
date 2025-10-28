@@ -7,4 +7,8 @@ export default {
     );
     return await res.json();
   },
+  async getWallets(ownerId) {
+    const res = await fetch(`${_HOST}/api/wallets/${ownerId}`);
+    return await res.json();
+  },
 };

@@ -19,6 +19,7 @@ const paths = {
   src: "src",
   dest: "build",
   pages: "src/pages/**/*.html",
+  favicons: "src/assets/favicons/*",
   styles: "src/scss/**/*.scss",
   scripts: "src/js/**/*.js",
   img: "src/assets/img/**/*",
@@ -33,6 +34,10 @@ function cleanBuild() {
 // copy HTML pages
 function pages() {
   return src(paths.pages).pipe(dest(paths.dest)).pipe(browserSync.stream());
+}
+// copy favicons
+function favicons() {
+  return src(paths.favicons).pipe(dest(paths.dest));
 }
 
 // styles: SCSS -> autoprefix -> group media queries -> minify
@@ -123,6 +128,7 @@ function fonts() {
 
 // watch files and serve with BrowserSync (dev)
 function serve() {
+  console.log("serve started");
   browserSync.init({
     server: {
       baseDir: paths.dest,
@@ -137,17 +143,18 @@ function serve() {
   watch(paths.scripts, scriptsDev);
   watch(paths.img, img);
   watch(paths.fonts, fonts);
+  console.log("serve finished");
 }
 
 // Composite tasks
 const build = series(
   cleanBuild,
-  parallel(pages, stylesProd, scriptsProd, img, fonts)
+  parallel(pages, favicons, stylesProd, scriptsProd, img, fonts)
 );
 
 const dev = series(
   cleanBuild,
-  parallel(pages, stylesDev, scriptsDev, img, fonts),
+  parallel(pages, favicons, stylesDev, scriptsDev, img, fonts),
   serve
 );
 
