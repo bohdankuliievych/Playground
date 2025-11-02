@@ -37,7 +37,7 @@ function pages() {
 }
 // copy favicons
 function favicons() {
-  return src(paths.favicons).pipe(dest(paths.dest));
+  return src(paths.favicons, { encoding: false }).pipe(dest(paths.dest));
 }
 
 // styles: SCSS -> autoprefix -> group media queries -> minify
